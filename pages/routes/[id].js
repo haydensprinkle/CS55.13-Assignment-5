@@ -28,18 +28,18 @@ export async function getStaticPaths(
 export default function Entry({ itemData }){
   return(
     <Layout>
-      <article class="card col-6">
-        <div class="card-body">
-          <h5 class="card-title">{itemData.first_name} {itemData.last_name}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">{itemData.email}</h6>
-          <p class="card-text">{itemData.home_city}, {itemData.home_country}</p>
-          <p class="card-text">Favorite color: {itemData.fav_color}
+      <article className="card col-6">
+        <div className="card-body">
+          <h5 className="card-title">{itemData.first_name} {itemData.last_name}</h5>
+          <h6 className="card-subtitle mb-2 text-muted">{itemData.email}</h6>
+          <p className="card-text">{itemData.home_city}, {itemData.home_country}</p>
+          <p className="card-text">Favorite color: {itemData.fav_color}
           </p>
         </div>
       </article>
       <br />
       <div className="list-group col-6">
-          <h6 class="text-muted">Users related by favorite color:</h6>
+          <h6 className="text-muted">Users related by favorite color:</h6>
           {itemData.color_companions.map(({ id, name }) => (
             <Link key={id} href={`/routes/${id}`}>
               <a className="list-group-item list-group-item-action">{name}</a>
